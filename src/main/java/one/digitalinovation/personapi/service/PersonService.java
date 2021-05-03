@@ -57,17 +57,6 @@ public class PersonService{
         personRepository.deleteById(id);
     }
 
-    /*public MessageResponseDTO updateById(Long id, PersonDTO personDTO) throws PersonNotFoundException {
-        personRepository.findById(id)
-                .orElseThrow(() -> new PersonNotFoundException(id));
-
-        Person personToUpdate = personMapper.toModel(personDTO);
-        Person savedPerson = personRepository.save(personToUpdate);
-        MessageResponseDTO messageResponse = createMessageResponse(savedPerson.getId(), "Updated person with ID: ");
-
-        return messageResponse;
-    }*/
-
     public MessageResponseDTO update(Long id, PersonDTO personDTO) throws PersonNotFoundException {
         personRepository.findById(id)
                 .orElseThrow(() -> new PersonNotFoundException(id));
